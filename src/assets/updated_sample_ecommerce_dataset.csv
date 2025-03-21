@@ -1,0 +1,6 @@
+User_ID,Height (cm),Weight (kg),Gender,Skin Color,Preferred Clothing Category,Previous Purchases,Age,Budget Range (Rs.),Location,Season Preference
+U001,170,65,Male,Fair,Casual,"T-Shirts, Jeans",25,2000-5000,Lahore,Winter
+U002,160,55,Female,Medium,Formal,"Dresses, Blazers",30,5000-10000,Karachi,Summer
+U003,175,70,Male,Dark,Sportswear,"Sports Shorts, Jerseys",28,3000-7000,Islamabad,All Seasons
+U004,180,80,Male,Fair,Casual,"Casual Shirts, Jeans",35,4000-8000,Faisalabad,Winter
+U005,165,60,Female,Medium,Formal,"Dresses, Skirts",27,6000-12000,Multan,Summer
