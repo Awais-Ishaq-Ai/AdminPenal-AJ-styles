@@ -10,6 +10,9 @@ import EditProduct from './Component/ProductManagment/EditProduct'
 import ViewOrder from './Component/OrderMangment/ViewOrder'
 import ShippingStatus from './Component/OrderMangment/ShippingStatus'
 import ReturnAndRefund from './Component/OrderMangment/ReturnAndRefund'
+import DiscountAndCoupon from './Component/Sales&Marketing/DiscountAndCoupon'
+import EmailandSms from './Component/Sales&Marketing/EmailandSms'
+import CustomerDetails from './Component/User Managment/CustomerDetails'
 function App() {
   return (
     <>
@@ -32,6 +35,9 @@ function App() {
               <Route path='/vieworder' element={<ViewOrder />} />
               <Route path='/shipping' element={<ShippingStatus />} />
               <Route path='/returnRefund' element={<ReturnAndRefund />} />
+              <Route path='/discountandcoupns' element={<DiscountAndCoupon />} />
+              <Route path='/email' element={<EmailandSms />} />
+              <Route path='/customerDetail' element={<CustomerDetails />} />
             </Routes>
           </div>
         </div>

@@ -145,7 +145,7 @@ export default function SideBar() {
                         </button>
                         <div className='flex justify-end mr-2'>
                             <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle3 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className='text-md' href="">Customer details</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="customerDetail">Customer details</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
                                 <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">control</a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
@@ -161,8 +161,8 @@ export default function SideBar() {
                         </button>
                         <div className='flex justify-end mr-2'>
                             <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle4 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className='text-xs' href="">Discounts and coupons</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">Email and SMS </a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-xs' to="discountandcoupns">Discounts and coupons</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="email">Email and SMS </Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
 
