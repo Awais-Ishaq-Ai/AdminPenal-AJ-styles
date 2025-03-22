@@ -23,6 +23,7 @@ function App() {
           </div>
           <div className='w-[80%]'>
             <Routes>
+              <Route path='/' element={<Analytics />} />
               <Route path='/analytics' element={<Analytics />} />
               <Route path='/sales' element={<Sales />} />
               <Route path='/availbleProduct' element={<AvailableProduct />} />
