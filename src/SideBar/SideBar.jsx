@@ -79,7 +79,7 @@ export default function SideBar() {
     return (
         <>
             <div className=' bg-[#002022] h-[92vh]'>
-                <aside style={{ backgroundImage: `url(${sideBarImg})`, backgroundPosition: "center", scrollbarWidth: "none" }} className='w-[24%] absolute top-10 text-white h-[92vh] overflow-y-auto  bg-black opacity-85'>
+                <aside style={{ backgroundImage: `url(${sideBarImg})`, backgroundPosition: "center", scrollbarWidth: "none" }} className='w-[20%] absolute top-10 text-white h-[92vh] overflow-y-auto  bg-black opacity-85'>
                     <ul className=' opacity-85 bg-black'>
                         <button onClick={handleDropDown} className={`flex items-center cursor-pointer w-[100%] px-2 justify-between py-2  ${toggle ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
                             }`}>
@@ -113,10 +113,8 @@ export default function SideBar() {
                         </button>
                         <div className='flex justify-end mr-2'>
                             <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle1 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">Add product</a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">Edit product</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><CategoryIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='text-sm' href="">product categories</a> </div>  <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><InventoryIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">Stock</a></div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="addProduct"  >Add product</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="editProduct">Edit product</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
 
@@ -131,9 +129,9 @@ export default function SideBar() {
                         </button>
                         <div className='flex justify-end mr-2'>
                             <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle2 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className='text-md' href="">View orders</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">shipping status</a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='text-sm' href="">returns & refunds</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="vieworder">View orders</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="shipping">shipping status</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='text-sm' to="returnRefund">returns & refunds</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
                         <button onClick={handleDropDown3} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle3 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''

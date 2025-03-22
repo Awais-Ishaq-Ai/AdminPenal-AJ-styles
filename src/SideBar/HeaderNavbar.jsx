@@ -6,10 +6,10 @@ import SettingsIcon from '@mui/icons-material/Settings';
 export default function HeaderNavbar() {
     return (
         <>
-            <header className='flex bg-[#1E1E2F] w-[100%]  pb-1.5 text-slate-400 justify px-3 justify-between items-center'>
+            <header className='flex bg-[#1E1E2F] w-[100%] py-1 text-slate-400 justify px-3 justify-between items-center'>
                 <h1 className='uppercase font-bold'>WearHub</h1>
                 <div className='flex justify-between items-center w-[22%]'>
-                    <InputBase placeholder="search" sx={{ color: "white", borderBottom: "2px dotted gray", fontSize: "16px" }} />
+                    <InputBase placeholder="search" sx={{ color: "white", borderBottom: "2px dashed gray", fontSize: "16px" }} />
                     <span className=''><NotificationsNoneIcon sx={{ color: "gray", fontSize: "20px" }} /></span>
                     <span className=''><SettingsIcon sx={{ color: "gray", fontSize: "20px" }} /></span>
                 </div>
