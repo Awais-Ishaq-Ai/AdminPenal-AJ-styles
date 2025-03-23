@@ -73,7 +73,7 @@ export default function EmailandSms() {
 
     return (
         <>
-            <div className="h-[92vh] bg-[#002022] overflow-auto p-5">
+            <div style={{scrollbarWidth:"none"}} className="h-[92vh] bg-[#002022] overflow-auto p-5">
                 <h1 className="text-2xl font-bold text-white mb-6">Email and SMS Management</h1>
 
                 {/* Search Bar */}
@@ -165,7 +165,7 @@ export default function EmailandSms() {
                 </div>
 
                 {/* Templates Table */}
-                <div className="overflow-x-auto">
+                <div style={{scrollbarWidth:"none"}} className="overflow-x-auto">
                     <table className="min-w-full bg-[#003034] rounded-lg overflow-hidden">
                         <thead className="bg-[#004044]">
                             <tr>

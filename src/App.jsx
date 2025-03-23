@@ -13,6 +13,11 @@ import ReturnAndRefund from './Component/OrderMangment/ReturnAndRefund'
 import DiscountAndCoupon from './Component/Sales&Marketing/DiscountAndCoupon'
 import EmailandSms from './Component/Sales&Marketing/EmailandSms'
 import CustomerDetails from './Component/User Managment/CustomerDetails'
+import Controls from './Component/User Managment/Controls'
+import PaymentGatewaySettings from './Component/Payment Transections/PaymentGatewaySettings'
+import TransactionHistory from './Component/Payment Transections/TransactionHistory'
+import CustomerReview from './Component/Reviews&FeedBacks/CustomerReview'
+import RatingsAndFeedbackManagement from './Component/Reviews&FeedBacks/RatingsAndFeedbackManagement'
 function App() {
   return (
     <>
@@ -38,6 +43,11 @@ function App() {
               <Route path='/discountandcoupns' element={<DiscountAndCoupon />} />
               <Route path='/email' element={<EmailandSms />} />
               <Route path='/customerDetail' element={<CustomerDetails />} />
+              <Route path='/controls' element={<Controls />} />
+              <Route path='/paymentsetting' element={<PaymentGatewaySettings />} />
+              <Route path='/transactionhistory' element={<TransactionHistory />} />
+              <Route path='/customerReviews' element={<CustomerReview />} />
+              <Route path='/rating' element={<RatingsAndFeedbackManagement />} />
             </Routes>
           </div>
         </div>

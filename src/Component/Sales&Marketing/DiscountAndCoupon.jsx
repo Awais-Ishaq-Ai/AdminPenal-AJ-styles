@@ -85,7 +85,7 @@ export default function DiscountAndCoupon() {
 
     return (
         <>
-            <div className="h-[92vh] bg-[#002022] overflow-auto p-5">
+            <div style={{scrollbarWidth:"none"}} className="h-[92vh] bg-[#002022] overflow-auto p-5">
                 <h1 className="text-2xl font-bold text-white mb-6">Discounts and Coupons</h1>
 
                 {/* Search Bar */}

@@ -24,7 +24,7 @@ export default function ViewOrder() {
     );
 
     return (
-        <div className='bg-[#002022] h-[92vh] overflow-auto p-4 sm:p-6'>
+        <div style={{scrollbarWidth:"none"}} className='bg-[#002022] h-[92vh] overflow-auto p-4 sm:p-6'>
             <h1 className='text-2xl font-bold text-white mb-4 sm:mb-6'>View Orders</h1>
 
             {/* Fixed Search Bar */}

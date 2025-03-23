@@ -146,7 +146,7 @@ export default function SideBar() {
                         <div className='flex justify-end mr-2'>
                             <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle3 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
                                 <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="customerDetail">Customer details</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">control</a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="controls">Control</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
 
@@ -177,8 +177,8 @@ export default function SideBar() {
                         </button>
                         <div className='flex justify-end mr-2'>
                             <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle5 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><SettingsApplicationsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className='text-[9px]' href="">Payment gateway settings</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><HistoryIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">Transaction history </a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><SettingsApplicationsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-[9px]' to="paymentsetting">Payment gateway settings</Link></div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><HistoryIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="transactionhistory">Transaction history </Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
 
@@ -192,9 +192,9 @@ export default function SideBar() {
                             {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
                         </button>
                         <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle6 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><RateReviewIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className='text-md' href="">Customer reviews</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><FeedbackIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='text-xs' href="">Ratings and feedback management </a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
+                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[100%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle6 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><RateReviewIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="customerReviews">Customer reviews</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
+                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><FeedbackIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='text-xs' to="rating">Ratings and feedback</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
                             </ul>
                         </div>
 
