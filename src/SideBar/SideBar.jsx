@@ -2,12 +2,11 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import HomeIcon from '@mui/icons-material/Home';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import DescriptionIcon from '@mui/icons-material/Description';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
-import CategoryIcon from '@mui/icons-material/Category';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PeopleIcon from '@mui/icons-material/People';
@@ -20,236 +19,158 @@ import FeedbackIcon from '@mui/icons-material/Feedback';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import SecurityIcon from '@mui/icons-material/Security';
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ChatIcon from '@mui/icons-material/Chat';
-// image 
-import sideBarImg from '../assets/eiffel tower.jpg'
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { Link } from 'react-router-dom';
-import HeaderNavbar from './HeaderNavbar';
+import sideBarImg from '../assets/eiffel tower.jpg';
 
 export default function SideBar() {
+    // Complete sidebar content structure
+    const sidebarSections = [
+        {
+            title: 'dashboard',
+            icon: <HomeIcon />,
+            subItems: [
+                { title: 'Analytics', to: 'analytics', icon: <RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /> },
+                { title: 'sales', to: 'sales', icon: <RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /> },
+                { title: 'Available products', to: 'availbleProduct', icon: <RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-base'
+        },
+        {
+            title: 'product Management',
+            icon: <InventoryIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'Add product', to: 'addProduct', icon: <ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },], fontSize: 'text-sm'
+        },
+        {
+            title: 'Order Management',
+            icon: <AssignmentIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'View orders', to: 'vieworder', icon: <DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'shipping status', to: 'shipping', icon: <ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'returns & refunds', to: 'returnRefund', icon: <ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-sm'
+        },
+        {
+            title: 'User Management',
+            icon: <PeopleIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'Customer details', to: 'customerDetail', icon: <DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'Control', to: 'controls', icon: <ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-sm'
+        },
+        {
+            title: 'Sales and Marketing',
+            icon: <TrendingUpIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'Discounts and coupons', to: 'discountandcoupns', icon: <DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'Email and SMS', to: 'email', icon: <ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-xs'
+        },
+        {
+            title: 'Payments & Transactions',
+            icon: <PaymentIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'Payment gateway settings', to: 'paymentsetting', icon: <SettingsApplicationsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'Transaction history', to: 'transactionhistory', icon: <HistoryIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-xs'
+        },
+        {
+            title: 'Reviews and Feedback',
+            icon: <PaymentIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'Customer reviews', to: 'customerReviews', icon: <RateReviewIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'Ratings and feedback', to: 'rating', icon: <FeedbackIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-xs'
+        },
+        {
+            title: 'Settings',
+            icon: <SettingsSuggestIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'General settings', to: 'setting', icon: <HandymanIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> },
+                { title: 'Security settings', to: 'securitySetting', icon: <SecurityIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-lg'
+        },
+        {
+            title: 'Support and Help Center',
+            icon: <SupportAgentIcon sx={{ fontSize: "18px", marginRight: "8px" }} />,
+            subItems: [
+                { title: 'Chat support', to: 'chat', icon: <ChatIcon sx={{ fontSize: "15px", marginRight: "8px" }} /> }
+            ],
+            fontSize: 'text-xs'
+        }
+    ];
 
-    const [toggle, setToggle] = useState(false)
-    const [toggle1, setToggle1] = useState(false)
-    const [toggle2, setToggle2] = useState(false)
-    const [toggle3, setToggle3] = useState(false)
-    const [toggle4, setToggle4] = useState(false)
-    const [toggle5, setToggle5] = useState(false)
-    const [toggle6, setToggle6] = useState(false)
-    const [toggle7, setToggle7] = useState(false)
-    const [toggle8, setToggle8] = useState(false)
-    const [toggle9, setToggle9] = useState(false)
-
-    const handleDropDown = () => {
-        setToggle(!toggle)
-    }
-    const handleDropDown1 = () => {
-        setToggle1(!toggle1)
-    }
-    const handleDropDown2 = () => {
-        setToggle2(!toggle2)
-    }
-    const handleDropDown3 = () => {
-        setToggle3(!toggle3)
-    }
-    const handleDropDown4 = () => {
-        setToggle4(!toggle4)
-    }
-    const handleDropDown5 = () => {
-        setToggle5(!toggle5)
-    }
-    const handleDropDown6 = () => {
-        setToggle6(!toggle6)
-    }
-    const handleDropDown7 = () => {
-        setToggle7(!toggle7)
-    }
-    const handleDropDown8 = () => {
-        setToggle8(!toggle8)
-    }
-    const handleDropDown9 = () => {
-        setToggle9(!toggle9)
-    }
+    // State management for dropdowns
+    const [expandedSections, setExpandedSections] = useState({});
+    const toggleSection = (sectionTitle) => {
+        setExpandedSections(prev => ({
+            ...prev,
+            [sectionTitle]: !prev[sectionTitle]
+        }));
+    };
 
     return (
-        <>
-            <div className=' bg-[#002022] h-[92vh]'>
-                <aside style={{ backgroundImage: `url(${sideBarImg})`, backgroundPosition: "center", scrollbarWidth: "none" }} className='w-[20%] absolute top-10 text-white h-[92vh] overflow-y-auto  bg-black opacity-85'>
-                    <ul className=' opacity-85 bg-black'>
-                        <button onClick={handleDropDown} className={`flex items-center cursor-pointer w-[100%] px-2 justify-between py-2  ${toggle ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-end'>
-                                <span><HomeIcon /></span>
-                                <h1 className='font-bold ml-2'>dashboard</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle ? 'rotate-180' : 'rotate-0'}`}> {toggle ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`} >
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><Link className='' to="analytics">Analytics</Link></li>
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><Link className='' to="sales">sales</Link></li>
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><Link className='' to="availbleProduct">Available products</Link></li>
-                                {/* <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><a className='' href="">Total Products</a></li>
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><a className='' href="">Shirts</a></li>
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><a className='' href="">Shoes</a></li>
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><a className='' href="">Pents</a></li>
-                                <li className='my-2 list-none'><RemoveIcon sx={{ fontSize: "8px", marginRight: "8px" }} /><a className='' href="">cultural dress</a></li> */}
-                            </ul>
-                        </div>
+        <div className='bg-[#002022] h-[92vh]'>
+            <aside
+                style={{
+                    backgroundImage: `url(${sideBarImg})`,
+                    backgroundPosition: "center",
+                    scrollbarWidth: "none"
+                }}
+                className='w-full md:w-[20%] absolute top-10 text-white h-[92vh] overflow-y-auto bg-black opacity-85'
+            >
+                <ul className='opacity-85 bg-black'>
+                    {sidebarSections.map((section, index) => (
+                        <React.Fragment key={index}>
+                            <button
+                                onClick={() => toggleSection(section.title)}
+                                className={`flex items-center cursor-pointer w-full px-2 justify-between py-4 border-b-2 border-white ${expandedSections[section.title]
+                                        ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%] animate-spin-slow'
+                                        : ''
+                                    }`}
+                            >
+                                <div className='flex capitalize items-center'>
+                                    <span>{section.icon}</span>
+                                    <h1 className={`font-bold ml-2 ${section.fontSize}`}>
+                                        {section.title}
+                                    </h1>
+                                </div>
+                                <span className={`transition-transform duration-300 ease-in-out ${expandedSections[section.title]
+                                        ? 'rotate-360'
+                                        : 'rotate-0'
+                                    }`}>
+                                    {expandedSections[section.title]
+                                        ? <KeyboardArrowUpIcon />
+                                        : <ExpandMoreIcon />}
+                                </span>
+                            </button>
 
-                        <button onClick={handleDropDown1} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle1 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><InventoryIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className='bg-blue opacity-95  text- rounded'> <span className='text-sm ml-0.5'>product Management</span> </h1>
+                            <div className='flex justify-end mr-2'>
+                                <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${expandedSections[section.title]
+                                        ? 'max-h-[500px] bg-[#071b1f] opacity-95'
+                                        : 'max-h-0 opacity-0'
+                                    } overflow-hidden`}>
+                                    {section.subItems.map((item, i) => (
+                                        <li key={i} className='flex justify-between items-center text-slate-400 my-2 py-1'>
+                                            <div className='flex items-center'>
+                                                <span>{item.icon}</span><Link to={item.to} className='ml-1'>{item.title}</Link></div>
+                                            <span><KeyboardArrowRightIcon sx={{ fontSize: "14px" }} /></span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle1 ? 'rotate-180' : 'rotate-0'}`}> {toggle ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle1 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="addProduct"  >Add product</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="editProduct">Edit product</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown2} className={`flex items-center cursor-pointer mt-1 w-[100%] px-2 py-2 justify-between  font-bold border-t  ${toggle2 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><AssignmentIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className=' opacity-95 p-2 text-sm rounded'>Order Management</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle2 ? 'rotate-180' : 'rotate-0'}`}> {toggle2 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle2 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="vieworder">View orders</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="shipping">shipping status</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ModeEditOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='text-sm' to="returnRefund">returns & refunds</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-                        <button onClick={handleDropDown3} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle3 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><PeopleIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className=' opacity-95 p-2 text-sm rounded'>User Managementt</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle3 ? 'rotate-180' : 'rotate-0'}`}> {toggle3 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle3 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '> <div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="customerDetail">Customer details</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'> <div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="controls">Control</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown4} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle4 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><TrendingUpIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className=' opacity-95 p-2 text-sm rounded'>Sales and Marketing</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle4 ? 'rotate-180' : 'rotate-0'}`}> {toggle4 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle4 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><DescriptionIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-xs' to="discountandcoupns">Discounts and coupons</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><ProductionQuantityLimitsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="email">Email and SMS </Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown5} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle5 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><PaymentIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className='opacity-95 text-xs '>Payments & Transactions</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle5 ? 'rotate-180' : 'rotate-0'}`}> {toggle5 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle5 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><SettingsApplicationsIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-[9px]' to="paymentsetting">Payment gateway settings</Link></div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><HistoryIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='' to="transactionhistory">Transaction history </Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown6} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle6 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><PaymentIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className='opacity-95 text-xs '>Reviews and Feedback</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle6 ? 'rotate-180' : 'rotate-0'}`}> {toggle6 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[100%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle6 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><RateReviewIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <Link className='text-md' to="customerReviews">Customer reviews</Link> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><FeedbackIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <Link className='text-xs' to="rating">Ratings and feedback</Link>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown7} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle7 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><SettingsSuggestIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className='opacity-95 text-lg '>Settings</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle7 ? 'rotate-180' : 'rotate-0'}`}> {toggle7 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className="flex justify-end mr-2">
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle7 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><HandymanIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className=' ' href="">General settings</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><SecurityIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href="">Security settings </a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown8} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle8 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><AssessmentIcon sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className='opacity-95 text-sm '>Reports and Analytics</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle8 ? 'rotate-180' : 'rotate-0'}`}> {toggle8 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle8 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><AttachMoneyIcon /></span>  <a className='text-md' href="">total slaes</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><LocalOfferIcon /></span> <a className='' href=""> products sales </a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-
-                        <button onClick={handleDropDown9} className={`flex items-center cursor-pointer w-[100%] mt-1 px-2 py-2 justify-between  font-bold border-t  ${toggle9 ? 'bg-gradient-to-t from-cyan-900 via-black bg-[length:100%_100%]  animate-spin-slow' : ''
-                            }`}>
-                            <div className='flex capitalize items-center'>
-                                <span className='text-xs'><SupportAgentIcon and Help Center sx={{ fontSize: "18px", marginRight: "8px" }} /></span>
-                                <h1 className='opacity-95 text-xs '>Support and Help Center</h1>
-                            </div>
-                            <span className={`transition-transform duration-300 ease-in-out ${toggle9 ? 'rotate-180' : 'rotate-0'}`}> {toggle9 ? <ExpandMoreIcon /> : <KeyboardArrowUpIcon />}  </span>
-                            {/* <h1 className='font-bold ml-2'>dashboard</h1> */}
-                        </button>
-                        <div className='flex justify-end mr-2'>
-                            <ul className={`flex flex-col pl-3.5 mt-1 text-xs w-[90%] shadow-[0px_0_10px_rgba(0,255,255,0.1),0px_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 ease-in ${toggle9 ? 'max-h-[500px] bg-[#071b1f] opacity-95' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                                <li className='flex justify-between items-center  text-slate-400 '><div className=' my-2 '> <span><HeadsetMicIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span>  <a className='text-md' href="">Customer support tickets</a> </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><HelpOutlineIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href=""> FAQs management </a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                                <li className='flex justify-between items-center  text-slate-400'><div className=' my-2 '>  <span><ChatIcon sx={{ fontSize: "15px", marginRight: "8px" }} /></span> <a className='' href=""> Chat support management</a>  </div> <span><KeyboardArrowRightIcon /></span> </li>
-                            </ul>
-                        </div>
-                    </ul>
-                </aside>
-            </div>
-
-        </>
-    )
+                        </React.Fragment>
+                    ))}
+                </ul>
+            </aside>
+        </div>
+    );
 }

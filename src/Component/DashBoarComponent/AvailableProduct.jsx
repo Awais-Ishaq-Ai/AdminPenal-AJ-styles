@@ -32,7 +32,7 @@ export default function AvailableProduct() {
                 {outOfStockProducts.length > 0 && (
                     <div className="fixed top-10 right-5 bg-red-600 text-white p-3 font-semibold text-center rounded shadow-lg z-50 
                         animate-blink">
-                        ⚠️ Out of Stock: {outOfStockProducts.join(", ")} - Please update inventory!
+                        ⚠️ <span className="font-bold">{outOfStockProducts.join(", ")}</span> is Out of Stock - Please update inventory!
                     </div>
                 )}
 
@@ -68,10 +68,8 @@ export default function AvailableProduct() {
                             );
                         })}
 
-                        <tr className="">
-                            <td colSpan={3} className="border text-center  border-gray-500 p-3"><strong className="border-b-2">Total Stock: {totalStock}</strong> </td>
-                            <td colSpan={2} className="border border-gray-500 p-3"><strong>Remaining Stock:</strong> {remainingStock}</td>
-                            <td colSpan={2} className="border border-gray-500 p-3"><strong>Total Profit:</strong> Rs. {totalProfit}</td>
+                        <tr>
+                            <td colSpan={7} className="border text-end border-gray-500 p-3"><strong className="border-b border-slate-400">Total Profit:</strong> <span className="border-b border-slate-400">Rs.{totalProfit}</span></td>
                         </tr>
                     </tbody>
                 </table>

@@ -6,7 +6,6 @@ import Analytics from './Component/DashBoarComponent/Analytics'
 import Sales from './Component/DashBoarComponent/Sales'
 import AvailableProduct from './Component/DashBoarComponent/AvailableProduct'
 import AddProduct from './Component/ProductManagment/AddProduct'
-import EditProduct from './Component/ProductManagment/EditProduct'
 import ViewOrder from './Component/OrderMangment/ViewOrder'
 import ShippingStatus from './Component/OrderMangment/ShippingStatus'
 import ReturnAndRefund from './Component/OrderMangment/ReturnAndRefund'
@@ -18,6 +17,9 @@ import PaymentGatewaySettings from './Component/Payment Transections/PaymentGate
 import TransactionHistory from './Component/Payment Transections/TransactionHistory'
 import CustomerReview from './Component/Reviews&FeedBacks/CustomerReview'
 import RatingsAndFeedbackManagement from './Component/Reviews&FeedBacks/RatingsAndFeedbackManagement'
+import GeneralSetting from './Component/Settings/GeneralSetting'
+import SecuritySettings from './Component/Settings/SecuritySetting'
+import ChatSupport from './Component/Support & help Center/ChatSupport'
 function App() {
   return (
     <>
@@ -36,7 +38,6 @@ function App() {
               <Route path='/sales' element={<Sales />} />
               <Route path='/availbleProduct' element={<AvailableProduct />} />
               <Route path='/addProduct' element={<AddProduct />} />
-              <Route path='/editProduct' element={<EditProduct />} />
               <Route path='/vieworder' element={<ViewOrder />} />
               <Route path='/shipping' element={<ShippingStatus />} />
               <Route path='/returnRefund' element={<ReturnAndRefund />} />
@@ -48,6 +49,9 @@ function App() {
               <Route path='/transactionhistory' element={<TransactionHistory />} />
               <Route path='/customerReviews' element={<CustomerReview />} />
               <Route path='/rating' element={<RatingsAndFeedbackManagement />} />
+              <Route path='/setting' element={<GeneralSetting />} />
+              <Route path='/securitySetting' element={<SecuritySettings />} />
+              <Route path='/chat' element={<ChatSupport />} />
             </Routes>
           </div>
         </div>

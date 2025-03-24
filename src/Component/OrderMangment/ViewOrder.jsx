@@ -24,11 +24,11 @@ export default function ViewOrder() {
     );
 
     return (
-        <div style={{scrollbarWidth:"none"}} className='bg-[#002022] h-[92vh] overflow-auto p-4 sm:p-6'>
+        <div style={{scrollbarWidth:"none"}} className='bg-[#002022] overflow-hidden h-[92vh]  p-4 sm:p-6'>
             <h1 className='text-2xl font-bold text-white mb-4 sm:mb-6'>View Orders</h1>
 
             {/* Fixed Search Bar */}
-            <div className='sticky top-0 z-10 bg-[#002022] py-4'>
+            <div className=' bg-[#002022] py-4'>
                 <input
                     type='text'
                     placeholder='Search by customer name...'
@@ -39,7 +39,7 @@ export default function ViewOrder() {
             </div>
 
             {/* Orders Table */}
-            <div className='overflow-x-auto mt-4'>
+            <div className='overflow-y-auto h-[calc(92vh-120px)] mt-4'>
                 <table className='min-w-full bg-[#003034] rounded-lg overflow-hidden'>
                     <thead className='bg-[#004044]'>
                         <tr>

@@ -3,23 +3,22 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { FaArrowUp } from "react-icons/fa";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
 
 export default function Analytics() {
 
     const barData = [{ views: 1300 }, { views: 1500 }, { views: 1700 }, { views: 900 }, { views: 1200 }, { views: 2000 }, { views: 2000 }, { views: 500 }, { views: 700 }, { views: 2000 },
     ];
     const data = [
-        { "name": "Jan", "uv": 4000, "pv": 2400, "amt": 2400 },
-        { "name": " Feb", "uv": 3000, "pv": 1398, "amt": 2210 },
-        { "name": "Mar", "uv": 2000, "pv": 9800, "amt": 2290 },
-        { "name": "Apr", "uv": 5980, "pv": 3908, "amt": 2000 },
-        { "name": "May", "uv": 1890, "pv": 4800, "amt": 2181 },
-        { "name": "June", "uv": 2390, "pv": 3800, "amt": 200 }
+        { "name": "Jan", "shoes": 4000, "shirt": 2400, "pents": 2400 },
+        { "name": " Feb", "shoes": 3000, "shirt": 1398, "pents": 2210 },
+        { "name": "Mar", "shoes": 2000, "shirt": 9800, "pents": 2290 },
+        { "name": "Apr", "shoes": 5980, "shirt": 3908, "pents": 2000 },
+        { "name": "May", "shoes": 1890, "shirt": 4800, "pents": 2181 },
+        { "name": "June", "shoes": 2390, "shirt": 3800, "pents": 200 }
     ]
 
     const percentage = 75; // Progress Percentage
-    // const COLORS = ["#0088FE", "#00C49F",];
 
     const totalSegments = 30; // Total bars in semi-circle
     const filledSegments = Math.round((percentage / 100) * totalSegments); // Filled sections based on percentage
@@ -35,7 +34,7 @@ export default function Analytics() {
 
     return (
         <>
-            <div style={{ scrollbarWidth: "none" , overflowY:"none" }} className='h-[92vh] bg-[#002022] overflow-auto p-3'>
+            <div style={{ scrollbarWidth: "none", overflowY: "none" }} className='h-[92vh] bg-[#002022] overflow-auto p-3'>
                 <div className='flex justify-between'>
                     <div className='border border-cyan-500 shadow-lg shadow-black rounded w-[30%] h-[220px]'>
                         <div className='flex items-center m-2 p-1 h-[40%]'>
@@ -48,10 +47,10 @@ export default function Analytics() {
                                 <p className='text-green-500 font-light'> <FaArrowUp /> 20% this month</p>
                             </div>
                         </div>
-                        <div className='h-[105px] ml-2 flex justify-center items-center w-[105px] border-[5px] border-dashed border-[#3257c7] p-1 rounded-full'>
-                            <div className="relative  h-[90px] w-[90px] flex justify-center items-center">
-                                <div className="absolute  h-full w-full rounded-full" style={{ background: `conic-gradient(#00AEEF ${50 * 3.5}deg, /* Cyan color for progress */gray 0deg /* Gray color for remaining */)`, mask: 'radial-gradient(transparent 58%, #000 60%)', WebkitMask: 'radial-gradient(transparent 70%, #000 70%)', }}></div>
-                                <span className="absolute text-white text-lg font-bold">50%</span>
+                        <div className='h-[105px] ml-2 flex justify-center items-center w-[105px] border-[5px] border-dashed border-[#058ba6] p-1 rounded-full'>
+                            <div className="relative h-[90px] w-[90px] flex justify-center items-center">
+                                <div className="absolute h-full w-full rounded-full" style={{ background: `conic-gradient(#00AEEF ${50 * 2.5}deg, gray 0deg)`, mask: 'radial-gradient(transparent 59%, #000 59%)', WebkitMask: 'radial-gradient(transparent 59%, #000 59%)' }}></div>
+                                <span className="absolute text-white text-lg font-bold">35%</span>
                             </div>
                         </div>
                     </div>
@@ -66,10 +65,10 @@ export default function Analytics() {
                                 <p className='text-green-500 font-light'> <FaArrowUp /> 20% this month</p>
                             </div>
                         </div>
-                        <div className='h-[105px] ml-2 flex justify-center items-center w-[105px] border-[5px] border-dashed border-[#3257c7] p-1 rounded-full'>
+                        <div className='h-[105px] ml-2 flex justify-center items-center w-[105px] border-[5px] border-dashed border-[#058ba6] p-1 rounded-full'>
                             <div className="relative h-[90px] w-[90px] flex justify-center items-center">
-                                <div className="absolute  h-full w-full rounded-full" style={{ background: `conic-gradient(#00AEEF ${50 * 3.5}deg, /* Cyan color for progress */gray 0deg /* Gray color for remaining */)`, mask: 'radial-gradient(transparent 59%, #000 50%)', WebkitMask: 'radial-gradient(transparent 70%, #000 70%)', }}></div>
-                                <span className="absolute text-white text-lg font-bold">40%</span>
+                                <div className="absolute h-full w-full rounded-full" style={{ background: `conic-gradient(#00AEEF ${50 * 3.7}deg, gray 0deg)`, mask: 'radial-gradient(transparent 59%, #000 59%)', WebkitMask: 'radial-gradient(transparent 59%, #000 59%)' }}></div>
+                                <span className="absolute text-white text-lg font-bold">50%</span>
                             </div>
                         </div>
                     </div>
@@ -86,7 +85,12 @@ export default function Analytics() {
                         </div>
                         <div className='h-[105px] ml-2 flex justify-center items-center w-[105px] border-[5px] border-dashed border-[#3257c7] p-1 rounded-full'>
                             <div className="relative h-[90px] w-[90px] flex justify-center items-center">
-                                <div className="absolute  h-full w-full rounded-full" style={{ background: `conic-gradient(#00AEEF ${50 * 4.5}deg, /* Cyan color for progress */gray 0deg /* Gray color for remaining */)`, mask: 'radial-gradient(transparent 59%, #000 50%)', WebkitMask: 'radial-gradient(transparent 70%, #000 70%)', }}></div>
+                                <div
+                                    className="absolute h-full w-full rounded-full"
+                                    style={{
+                                        background: `conic-gradient(#00AEEF ${50 * 5.0}deg, gray 0deg)`,
+                                        mask: 'radial-gradient(transparent 59%, #000 59%)', WebkitMask: 'radial-gradient(transparent 59%, #000 59%)'
+                                    }}></div>
                                 <span className="absolute text-white text-lg font-bold">75%</span>
                             </div>
                         </div>
@@ -115,7 +119,7 @@ export default function Analytics() {
                     </div>
 
                     <div className="bg-gray-800 p-6 w-[50%] h-[370px] mt-5 rounded-2xl shadow-lg shadow-black text-white">
-                        <h3 className="text-xl mb-4">Sales Statistics</h3>
+                        <h3 className="text-xl text-center mb-1">Sales Statistics</h3>
                         <ResponsiveContainer width="100%" height={300}>
                             <AreaChart data={data} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
                                 <defs>
@@ -123,7 +127,7 @@ export default function Analytics() {
                                         <stop offset="5%" stopColor="#a83232" stopOpacity={0.8} />
                                         <stop offset="50%" stopColor="#a83232" stopOpacity={0} />
                                     </linearGradient>
-                                    <linearGradient id="colorPv1" x1="2" y1="0" x2="0" y2="2">
+                                    <linearGradient id="colorPv1" x1="2" y1="0" x2="0" y2="1">
                                         <stop offset="5%" stopColor="#82ca4d" stopOpacity={0.9} />
                                         <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
                                     </linearGradient>
@@ -134,11 +138,11 @@ export default function Analytics() {
                                 </defs>
                                 <XAxis dataKey="name" />
                                 <YAxis />
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <Tooltip />
-                                <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                                <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv1)" />
-                                <Area type="monotone" dataKey="amt" stroke="#FF6B6B" fillOpacity={1} fill="url(#colorPv2)" />
+                                {/* <CartesianGrid strokeDasharray="none" /> */}
+                                <Tooltip contentStyle={{ backgroundColor: "#002000", opacity: "0.8", borderRadius: "10px" }} />
+                                <Area type="monotone" dataKey="shoes" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                                <Area type="monotone" dataKey="pents" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv1)" />
+                                <Area type="monotone" dataKey="shirt" stroke="#FF6B6B" fillOpacity={1} fill="url(#colorPv2)" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -146,17 +150,7 @@ export default function Analytics() {
                     <div className='w-[23%] h-[360px] rounded-lg shadow-lg shadow-black mt-6'>
                         <div style={{ backgroundColor: "#0d1b2a", padding: "0px" }}>
                             <PieChart width={200} height={130}>
-                                <Pie
-                                    data={Piedata}
-                                    startAngle={180}
-                                    endAngle={0}
-                                    cx="50%"
-                                    cy="100%"
-                                    innerRadius={50}
-                                    outerRadius={70}
-                                    paddingAngle={2}
-                                    dataKey="value"
-                                >
+                                <Pie data={Piedata} startAngle={180} endAngle={0} cx="50%" cy="100%" innerRadius={50} outerRadius={70} paddingAngle={2} dataKey="value">
                                     {Piedata.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={COLORS[index]} />
                                     ))}
@@ -168,7 +162,7 @@ export default function Analytics() {
                             </div>
                         </div>
 
-                        <div className="bg-[#0d1b2a] text-white p-4 rounded-xl w-[180px] shadow-lg">
+                        <div className="bg-[#0d1b2a] text-white p-4 rounded-xl w-[100%] h-[205px] shadow-lg">
                             {/* Income Section */}
                             <div className="flex justify-between items-center">
                                 <span className="text-sm text-gray-300">Income</span>

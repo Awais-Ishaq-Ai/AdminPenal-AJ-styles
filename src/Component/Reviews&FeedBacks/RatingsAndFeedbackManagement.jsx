@@ -8,7 +8,7 @@ export default function RatingsAndFeedbackManagement() {
             rating: 5,
             review: 'Excellent service! The product was delivered on time and in perfect condition.',
             date: '2023-10-01',
-            status: 'Approved', // Status of the review
+            status: 'Approved', // Initial status
         },
         {
             id: 2,
@@ -16,7 +16,7 @@ export default function RatingsAndFeedbackManagement() {
             rating: 4,
             review: 'Good product, but the delivery was a bit delayed.',
             date: '2023-10-02',
-            status: 'Pending',
+            status: 'Pending', // Initial status
         },
         {
             id: 3,
@@ -24,7 +24,7 @@ export default function RatingsAndFeedbackManagement() {
             rating: 3,
             review: 'The product quality is average. Expected better for the price.',
             date: '2023-10-03',
-            status: 'Rejected',
+            status: 'Rejected', // Initial status
         },
     ]);
 
@@ -38,8 +38,8 @@ export default function RatingsAndFeedbackManagement() {
     };
 
     return (
-        <div className="h-[92vh] bg-[#002022] overflow-auto p-5">
-            <h1 className="text-2xl font-bold text-white mb-6">Ratings and Feedback Management</h1>
+        <div className="h-[92vh] bg-[#002022] overflow-auto p-3">
+            <h1 className="text-2xl font-bold text-white mb-6 flex justify-center items-center">Customer reviews for Products</h1>
 
             {/* Reviews Table */}
             <div className="bg-[#003034] rounded-lg overflow-hidden">
@@ -56,7 +56,7 @@ export default function RatingsAndFeedbackManagement() {
                     </thead>
                     <tbody className="divide-y divide-[#005055]">
                         {reviews.map((review) => (
-                            <tr key={review.id} className="hover:bg-[#004044] transition-colors">
+                            <tr key={review.id} className="hover:bg-[#004034] transition-colors">
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-white">{review.customerName}</td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
                                     <div className="flex items-center space-x-1">
@@ -72,7 +72,7 @@ export default function RatingsAndFeedbackManagement() {
                                 </td>
                                 <td className="px-6 py-4 text-sm text-white">{review.review}</td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-white">{review.date}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+                                <td className="px-1 py-4 whitespace-nowrap text-sm text-white">
                                     <span
                                         className={`px-2 py-1 rounded-full text-xs font-semibold ${
                                             review.status === 'Approved'
@@ -85,12 +85,15 @@ export default function RatingsAndFeedbackManagement() {
                                         {review.status}
                                     </span>
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+                                <td className="px-1 py-4 whitespace-nowrap text-sm text-white">
                                     <button
                                         onClick={() => updateReviewStatus(review.id, 'Approved')}
-                                        className="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-600 transition-colors mr-2"
+                                        className="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-600 transition-colors mr-2">Approve</button>
+                                    <button
+                                        onClick={() => updateReviewStatus(review.id, 'Pending')}
+                                        className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition-colors mr-2"
                                     >
-                                        Approve
+                                        Pending
                                     </button>
                                     <button
                                         onClick={() => updateReviewStatus(review.id, 'Rejected')}
