@@ -137,16 +137,11 @@ export default function ChatSupport() {
                             </div>
 
                             {/* Messages */}
-                            <div style={{scrollbarWidth:"none"}} className="flex-1 overflow-y-auto p-4">
+                            <div style={{ scrollbarWidth: "none" }} className="flex-1 overflow-y-auto p-4">
                                 {messages[activeCustomer]?.length > 0 ? (
                                     messages[activeCustomer].map((msg) => (
-                                        <div
-                                            key={msg.id}
-                                            className={`mb-4 flex ${msg.sender === 'admin' ? 'justify-end' : 'justify-start'}`}
-                                        >
-                                            <div
-                                                className={`max-w-xs p-3 rounded-lg ${msg.sender === 'admin' ? 'bg-[#017374] text-white' : 'bg-[#004044] text-white'}`}
-                                            >
+                                        <div key={msg.id} className={`mb-4 flex ${msg.sender === 'admin' ? 'justify-end' : 'justify-start'}`}>
+                                            <div className={`max-w-xs p-3 rounded-lg ${msg.sender === 'admin' ? 'bg-[#017374] text-white' : 'bg-[#004044] text-white'}`}>
                                                 <Typography>{msg.text}</Typography>
                                                 <Typography variant="caption" display="block" color="textSecondary" className="text-right">
                                                     {msg.time}
@@ -155,7 +150,7 @@ export default function ChatSupport() {
                                         </div>
                                     ))
                                 ) : (
-                                    <Typography color="textSecondary" className="text-center mt-10">
+                                    <Typography color="textSecondary" style={{ color: "white" }} className="text-center mt-10 ">
                                         No messages yet. Start the conversation!
                                     </Typography>
                                 )}
@@ -188,7 +183,7 @@ export default function ChatSupport() {
                         </>
                     ) : (
                         <div className="flex items-center justify-center h-full">
-                            <Typography color="textSecondary">
+                            <Typography color="textSecondary ">
                                 Select a customer to start chatting
                             </Typography>
                         </div>
